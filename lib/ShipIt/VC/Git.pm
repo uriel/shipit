@@ -108,7 +108,7 @@ sub tag_version {
     my $tmp_fh = File::Temp->new(UNLINK => 1, SUFFIX => '.msg');
     print $tmp_fh $msg;
     my $tmp_fn = "$tmp_fh";
-    my $tag = $self->_tag_of_version($ver); 
+    my $tag = $self->_tag_of_version($ver);
     system($self->command, "tag", "-a", ($self->{sign_tag} ? "-s" : ()), "-F", $tmp_fn, $tag)
         and die "Tagging of version '$ver' failed.\n";
 

@@ -105,7 +105,7 @@ sub _build_tempdist {
     # $self goes out of scope, later.
     my $tdir = $self->{dist_tempdirobj} = tempdir_obj();
 
-    File::Copy::move($distfile, $tdir->directory) or 
+    File::Copy::move($distfile, $tdir->directory) or
         die "Failed to move dist $distfile to tempdir";
 
     return $tdir->directory . "/$distfile";
