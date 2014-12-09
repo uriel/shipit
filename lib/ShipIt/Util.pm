@@ -65,7 +65,7 @@ sub make_var {
 sub find_subclasses {
     # search for any other custom project type modules
     my $class = shift;
-    my @classes = ();  
+    my @classes = ();
     for my $dir (@INC) {
         for my $file (glob("$dir/" . join("/", split(/::/, $class)) . "/*.pm")) {
             if($file =~ /\/(\w+)\.pm/) {
